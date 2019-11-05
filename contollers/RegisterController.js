@@ -28,7 +28,7 @@ const getRegister = (req, res) => {
 };
 
 const getOneRegister = (req, res) => {
-  Register.find({id:req.params.id}, (error, documents) => {
+  Register.findById(req.params.id, (error, documents) => {
     if (error)
       return res.status(500).json({
         msg: "hubo un error"
